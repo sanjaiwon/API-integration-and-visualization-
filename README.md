@@ -35,4 +35,5 @@ This project helps build key skills in data analysis, styling visual plots, and 
 Overall, the project meets its objective of demonstrating Python’s capability in integrating and visualizing data, laying the foundation for more advanced tasks involving real-time API data in future stages.
 
 *OUTPUT*:
+https://i.imgur.com/GEcFa03.png
 
