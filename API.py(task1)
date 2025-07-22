@@ -1,0 +1,98 @@
+#  Hello, Welcome to My Python Visualization Project!
+print("----------------------------------------------------")
+print(" Hello, Welcome to My Python Visualization Project!")
+print("Intern: Sanjai krishnan.S")
+print("College: Rajalakshmi Institute of Technology")
+print("Internship Company: Codetech IT Solutions")
+print("Task 1 – API Integration and Data Visualization")
+print("----------------------------------------------------")
+print("This script demonstrates weather visualization")
+print("   using matplotlib & seaborn (with sample data)")
+print("----------------------------------------------------\n")
+
+# ------------------------------------------------------------------------------
+#  Intern: Sanjai krishnan.S
+#  College: Rajalakshmi Institute of Technology
+#  Internship Company: Codetech IT Solutions
+#  Task 1: API Integration and Data Visualization
+#
+#  Project Description:
+# This Python project demonstrates real-world data visualization using matplotlib
+# and seaborn libraries to present weather data for five Indian cities.
+# The graphs include temperature, humidity, and weather condition breakdowns.
+#
+#  Note: Since this script is run in a mobile testing environment where API
+# access is restricted, we are using sample static data instead of live API.
+# The visualization logic, structure, and skill demonstration remain the same.
+#
+# Graphs Included:
+# - Bar Plot: Temperature Comparison
+# - Line Plot: Humidity Levels
+# - Pie Chart: Weather Condition Distribution
+# ------------------------------------------------------------------------------
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#  Styling
+sns.set_style("whitegrid")
+sns.set_palette("Set2")
+plt.rcParams['figure.facecolor'] = '#ffffff'
+plt.rcParams['axes.titlesize'] = 15
+plt.rcParams['axes.labelsize'] = 12
+
+# Offline Sample Weather Data
+cities = ["Chennai", "Bangalore", "Mumbai", "Delhi", "Kolkata"]
+temperature = [34.2, 28.4, 31.8, 35.5, 32.1]     # in Celsius
+humidity = [62, 70, 75, 58, 66]                 # in Percentage
+weather_conditions = ["Clear", "Clouds", "Rain", "Clear", "Clouds"]
+
+#  Print Data Summary
+print("\n Sample Weather Data Used (Offline Mode):\n")
+for i in range(len(cities)):
+    print(f"{cities[i]}: {temperature[i]}°C | {humidity[i]}% Humidity | Weather: {weather_conditions[i]}")
+
+# Bar Plot – Temperature (with fixed palette warning)
+plt.figure(figsize=(10, 6))
+bars = sns.barplot(x=cities, y=temperature, hue=cities, legend=False, palette='Set2')
+plt.title("Temperature Comparison Across Cities", fontweight='bold')
+plt.xlabel("City")
+plt.ylabel("Temperature (°C)")
+plt.xticks(rotation=45)
+for i, bar in enumerate(bars.patches):
+    bars.annotate(f'{temperature[i]:.1f}°C', (bar.get_x() + bar.get_width()/2, bar.get_height()),
+                  ha='center', va='bottom', fontsize=10)
+plt.tight_layout()
+plt.show()
+
+# 📈 Line Plot – Humidity
+plt.figure(figsize=(10, 6))
+sns.lineplot(x=cities, y=humidity, marker='o', linewidth=3, color='#0a74da', markersize=10)
+plt.title("Humidity Levels Across Indian Cities", fontweight='bold')
+plt.xlabel("City")
+plt.ylabel("Humidity (%)")
+plt.ylim(0, max(humidity) + 20)
+for i, val in enumerate(humidity):
+    plt.text(i, val + 2, f"{val}%", ha='center', va='bottom', fontsize=10, fontweight='bold', color='#333333')
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+
+#  Pie Chart – Weather Condition Distribution
+plt.figure(figsize=(8, 6))
+labels = list(set(weather_conditions))
+counts = [weather_conditions.count(label) for label in labels]
+colors = sns.color_palette("pastel")[0:len(labels)]
+plt.pie(counts, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title("Weather Conditions Distribution", fontweight='bold')
+plt.tight_layout()
+plt.show()
+
+#  Final Message
+print("\nVisualization Dashboard Created Successfully!")
+print(" Includes Temperature, Humidity & Weather Condition Pie Chart")
+print("Submitted by: Sanjai Krishnan.S")
+print(" College: Rajalakshmi Institute of Technology")
+print(" Internship at: Codetech IT Solutions")
+print(" Task 1 – Python Programming Completed Successfully!\n")
+print(" Thank you for reviewing my project!")
