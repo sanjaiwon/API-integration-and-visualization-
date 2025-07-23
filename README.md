@@ -36,5 +36,6 @@ Overall, the project meets its objective of demonstrating Python’s capability 
 
 *OUTPUT*:
 
-
+![Image](https://github.com/user-attachments/assets/e3bc2bf0-d267-4645-bb22-e2323a4e4323)
+![Image](https://github.com/user-attachments/assets/0318bbef-df78-4306-9655-68e798f51374)
 
